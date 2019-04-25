@@ -9,11 +9,30 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductoService {
 
+    
+    
+    
+    
     @Autowired
     private ProductoRepository productoRepository;
     
     public List<ProductoEntity> buscarTodos() {
         return (List<ProductoEntity>) this.productoRepository.findAll();
+        
+        
     }
+    
+    
+     public ProductoEntity registrar(ProductoEntity estudiantevariable){
+    return this.productoRepository.save(estudiantevariable);
+    } 
+     
+             public ProductoEntity actualizar( ProductoEntity varprod, Long id){
+    return this.productoRepository.save(varprod);
+   
+    }
+     
+    
+    
     
 }

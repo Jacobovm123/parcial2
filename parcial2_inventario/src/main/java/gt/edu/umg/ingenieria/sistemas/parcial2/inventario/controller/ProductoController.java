@@ -5,6 +5,8 @@ import gt.edu.umg.ingenieria.sistemas.parcial2.inventario.service.ProductoServic
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,5 +21,16 @@ public class ProductoController {
     public List<ProductoEntity> buscarTodos() {
         return this.productoService.buscarTodos();
     }
+    
+  @PostMapping("/registrarProducto")
+public ProductoEntity registrar(@RequestBody(required = true) ProductoEntity varprod)
+{
+return this.productoService.registrar(varprod)  ;  
+
+}
+    
+
+
+    
     
 }
